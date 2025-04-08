@@ -21,4 +21,5 @@ Steps to setup Ubuntu
 7. Get IP
 
 6. Upload SSH keys from another system
+
     ssh-copy-id [IP]
