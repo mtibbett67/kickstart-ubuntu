@@ -34,6 +34,7 @@ chmod +x post-ubuntu.sh
 # --- System Updates and Upgrade ---
 echo "Running system updates and upgrading to the newest distribution..."
 echo "Do not reboot!"
+pause
 apt update && apt upgrade -y && do-release-upgrade
 echo "System update and upgrade complete."
 
@@ -50,4 +51,5 @@ echo "Default shell for $USERNAME changed to Zsh."
 
 echo "login a new user and wget post-ubuntu.sh and run."
 echo "Script execution complete rebooting the system."
+pause
 reboot

@@ -14,7 +14,6 @@ echo "Dotfiles cloned."
 # --- Copy Zsh Configuration ---
 echo "Copying Zsh configuration from '$ZSHRC_SOURCE' to '$ZSHRC_DEST'..."
 cp ~/Documents/dotfiles/zsh/.zshrc ~/
-source ~/.zshrc
 echo "Zsh configuration copied."
 
 # --- Get System IP Address ---
@@ -23,3 +22,6 @@ ip a | grep "inet " | grep -v "127.0.0.1" | awk '{print $2}' | cut -d'/' -f1
 echo "IP address displayed."
 
 echo "Script execution complete."
+echo "Logging out to initialize zsh"
+pause
+exit
