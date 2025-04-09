@@ -25,6 +25,12 @@ echo "Adding user $USERNAME to the sudo group..."
 usermod -aG sudo "$USERNAME"
 echo "User '$USERNAME' added successfully."
 
+# --- Copy post-ubuntu.sh file to new users home dir ---
+cd /home/"$USERNAME"
+wget https://github.com/mtibbett67/kickstart-ubuntu/raw/refs/heads/main/post-ubuntu.sh
+chown "$USERNAME":"$USERNAME" post-ubuntu.sh
+chmod +x post-ubuntu.sh
+
 # --- System Updates and Upgrade ---
 echo "Running system updates and upgrading to the newest distribution..."
 echo "After reboot login a new user and wget post-ubuntu.sh and run."
