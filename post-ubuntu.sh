@@ -16,6 +16,7 @@ ZSHRC_SOURCE="~/Documents/dotfiles/zsh/.zshrc"
 ZSHRC_DEST="~/"
 echo "Copying Zsh configuration from '$ZSHRC_SOURCE' to '$ZSHRC_DEST'..."
 cp "$ZSHRC_SOURCE" "$ZSHRC_DEST"
+source ~/.zshrc
 echo "Zsh configuration copied."
 
 # --- Get System IP Address ---
