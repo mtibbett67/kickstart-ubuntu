@@ -33,8 +33,21 @@ chmod +x post-ubuntu.sh
 
 # --- System Updates and Upgrade ---
 echo "Running system updates and upgrading to the newest distribution..."
-echo "After reboot login a new user and wget post-ubuntu.sh and run."
+echo "Do not reboot!"
 apt update && apt upgrade -y && do-release-upgrade
 echo "System update and upgrade complete."
 
-echo "Script execution complete."
+# --- Install Packages ---
+PACKAGES="net-tools zsh neovim git"
+echo "Installing packages: $PACKAGES"
+sudo apt install -y $PACKAGES
+echo "Packages installed."
+
+# Set Zsh as default shell for new user
+echo "Changing default shell to Zsh for "$USERNAME"..."
+chsh -s "$(which zsh)" "$USERNAME"
+echo "Default shell for $USERNAME changed to Zsh."
+
+echo "login a new user and wget post-ubuntu.sh and run."
+echo "Script execution complete rebooting the system."
+reboot
