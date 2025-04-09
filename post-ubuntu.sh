@@ -1,5 +1,16 @@
 #!/bin/bash
 
+# --- Install Packages ---
+PACKAGES="net-tools zsh neovim git"
+echo "Installing packages: $PACKAGES"
+sudo apt install -y $PACKAGES
+echo "Packages installed."
+
+# Set Zsh as default shell for new user
+echo "Changing default shell to Zsh for "$USERNAME"..."
+chsh -s "$(which zsh)" "$USERNAME"
+echo "Default shell for $USERNAME changed to Zsh."
+
 echo "Creating Documents directory..."
 mkdir -p ~/Documents
 cd ~/Documents

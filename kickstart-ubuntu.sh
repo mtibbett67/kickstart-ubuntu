@@ -25,17 +25,6 @@ echo "Adding user $USERNAME to the sudo group..."
 usermod -aG sudo "$USERNAME"
 echo "User '$USERNAME' added successfully."
 
-# --- Install Packages ---
-PACKAGES="net-tools zsh neovim git"
-echo "Installing packages: $PACKAGES"
-apt install -y $PACKAGES
-echo "Packages installed."
-
-# Set Zsh as default shell for new user
-echo "Changing default shell to Zsh for "$USERNAME"..."
-chsh -s "$(which zsh)" "$USERNAME"
-echo "Default shell for $USERNAME changed to Zsh."
-
 # --- System Updates and Upgrade ---
 echo "Running system updates and upgrading to the newest distribution..."
 echo "After reboot login a new user and wget post-ubuntu.sh and run."
