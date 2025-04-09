@@ -16,11 +16,6 @@ if id -u "$USERNAME" &> /dev/null; then
   exit 1
 fi
 
-# --- System Updates and Upgrade ---
-echo "Running system updates and upgrading to the newest distribution..."
-apt update && apt upgrade -y && do-release-upgrade
-echo "System update and upgrade complete."
-
 # --- Add Local User ---
 echo "Adding local user: $USERNAME"
 useradd -m "$USERNAME"
@@ -29,6 +24,11 @@ passwd "$USERNAME"
 echo "Adding user $USERNAME to the sudo group..."
 usermod -aG sudo "$USERNAME"
 echo "User '$USERNAME' added successfully."
+
+# --- System Updates and Upgrade ---
+echo "Running system updates and upgrading to the newest distribution..."
+apt update && apt upgrade -y && do-release-upgrade
+echo "System update and upgrade complete."
 
 # --- Install Packages ---
 PACKAGES="net-tools zsh neovim git"
