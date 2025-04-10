@@ -32,9 +32,10 @@ chown "$USERNAME":"$USERNAME" post-ubuntu.sh
 chmod +x post-ubuntu.sh
 
 # --- System Updates and Upgrade ---
+echo -e "\n\n\n\n\n"
 echo "Running system updates and upgrading to the newest distribution..."
 echo "Do not reboot!"
-pause
+read -p "Press Enter to continue..."
 apt update && apt upgrade -y && do-release-upgrade
 echo "System update and upgrade complete."
 
@@ -49,7 +50,8 @@ echo "Changing default shell to Zsh for "$USERNAME"..."
 chsh -s "$(which zsh)" "$USERNAME"
 echo "Default shell for $USERNAME changed to Zsh."
 
+echo -e "\n\n\n\n\n"
 echo "login a new user and wget post-ubuntu.sh and run."
 echo "Script execution complete rebooting the system."
-pause
+read -p "Press Enter to continue..."
 reboot
