@@ -23,5 +23,5 @@ echo "IP address displayed."
 
 echo "Script execution complete."
 echo "Logging out to initialize zsh"
-pause
+read -p "Press Enter to continue..."
 exit
