@@ -4,3 +4,6 @@ Steps to setup Ubuntu
 
 Script URL: https://github.com/mtibbett67/kickstart-ubuntu/raw/refs/heads/main/kickstart-ubuntu.sh
 
+
+wget https://github.com/mtibbett67/kickstart-ubuntu/raw/refs/heads/main/kickstart-ubuntu.sh && chmod +x kickstart-ubuntu.sh && ./kickstart-ubuntu.sh
+
