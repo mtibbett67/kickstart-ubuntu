@@ -25,3 +25,4 @@ echo "Script execution complete."
 echo "Logging out to initialize zsh"
 read -p "Press Enter to continue..."
 exit
+
