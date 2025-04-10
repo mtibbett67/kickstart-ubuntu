@@ -22,7 +22,5 @@ ip a | grep "inet " | grep -v "127.0.0.1" | awk '{print $2}' | cut -d'/' -f1
 echo "IP address displayed."
 
 echo "Script execution complete."
-echo "Logging out to initialize zsh"
+echo "Logout or exit and login to initialize zsh"
 read -p "Press Enter to continue..."
-exit
-
